@@ -1,15 +1,16 @@
-import com.sun.tools.javac.util.List;
+
 import org.javers.core.Javers;
 import org.javers.core.JaversBuilder;
 import org.javers.core.diff.Change;
 import org.javers.core.diff.Diff;
 
-import java.util.ListIterator;
+import java.util.Arrays;
+import java.util.List;
 
 public class ExampleMain {
     public static void main(String[] args) {
-        Foo one = new Foo("head", List.from(new Foo[]{new Foo("onechild")}));
-        Foo two = new Foo("head", List.from(new Foo[]{new Foo("onechild"), new Foo("twochild1"), new Foo("twochild2")}));
+        Foo one = new Foo("head", Arrays.asList(new Foo[]{new Foo("onechild")}));
+        Foo two = new Foo("head", Arrays.asList(new Foo[]{new Foo("onechild"), new Foo("twochild1"), new Foo("twochild2")}));
 
 //        Javers javers = JaversBuilder.javers().registerValueObject(Foo.class).typeSafeValues().build();
        Javers javers = JaversBuilder.javers().build();
