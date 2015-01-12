@@ -15,19 +15,18 @@ public class ETPExampleMain {
         ETPTerm parse2 = getEtpTerm("app-modified.config");
 
 
-        System.err.println(parse);
-        System.err.println(parse2);
+        System.out.println(parse);
+        System.out.println(parse2);
 
 
 
 
         Javers javers = JaversBuilder.javers()
-
-                .withMappingStyle(MappingStyle.BEAN)
+                .withMappingStyle(MappingStyle.FIELD)
                 .build();
 
         Diff compare = javers.compare(parse, parse2);
-        System.err.println(compare);
+        System.out.println(compare);
 
 
     }
